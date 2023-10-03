@@ -32,7 +32,6 @@ public class thirdpersoncameracontrol : MonoBehaviour
         }
         else
             if (angleIsTooBig())
-
             {
                 print("Subtracting");
                 print("Euler y is " + transform.localRotation.eulerAngles.y.ToString());
@@ -51,10 +50,13 @@ public class thirdpersoncameracontrol : MonoBehaviour
         return angle > desiredAngle - bufferZone;
     }
 
+
+
     private bool angleIsTooSmall()
     {
         float angle = adjustAngle180(transform.localRotation.eulerAngles.y);
         return angle < desiredAngle + bufferZone;
+
         
     }
 
@@ -64,12 +66,8 @@ public class thirdpersoncameracontrol : MonoBehaviour
         
         if (angle > 180f) return adjustAngle180(angle - 360f);
         return adjustAngle180(angle + 360f);
+
     }
-
-
-    
-
-
 
 
 
